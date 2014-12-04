@@ -6,11 +6,7 @@
 			<% if male.id == current_student.id %>
 				<table id="selfieg">
 					<tr><th>You!</th></tr>
-						<% if male.image.blank? %>
-							<tr><td><%= image_tag("userimage.png") %></td></tr>
-						<% else %>
-							<tr><td><%= image_tag male.image%></td></tr>
-						<% end %>
+					<tr><td><%= image_tag male.image%></td></tr>
 					<tr><td><%= male.score_calc %></td></tr>
 				</table>
 			<% else %>
