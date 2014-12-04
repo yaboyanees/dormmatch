@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dorm.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @dorm.price %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @dorm.location %>
+</p>
+
+<p>
+  <strong>Num roomates:</strong>
+  <%= @dorm.num_roomates %>
+</p>
+
+<p>
+  <strong>Dorm image:</strong>
+  <%= @dorm.dorm_image %>
+</p>
+
+<p>
+  <strong>Room image:</strong>
+  <%= @dorm.room_image %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @dorm.school_id %>
+</p>
+
+<%= link_to 'Edit', edit_dorm_path(@dorm) %> |
+<%= link_to 'Back', dorms_path %>

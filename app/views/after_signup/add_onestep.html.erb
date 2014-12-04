@@ -1,0 +1,15 @@
+<%= form_for(@student, :url => wizard_path, :method => :put) do |f| %>
+<div id="backdrop">
+	<div class="onestep">
+		<h2>Please Add 411 Info</h2>
+		<%= f.label "Name" %><br>
+		<%= f.text_field :f_name, :placeholder => "Roomie" %><br>
+		<%= f.label "Image" %><br>
+		<%= f.text_field :image, :placeholder => "userimage.png" %><br>
+		<%= f.label "School" %><br />
+		<%= f.collection_select :school_id, School.all, :id, :schoolname, :prompt => '' %><br />
+		<br />
+		<%= f.submit 'Next', :class =>"nextButton" %>
+	</div>
+</div>
+<% end %>

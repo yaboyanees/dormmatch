@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="Find A Dorm Mate That Fits Your Lifestyle">
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+	<div id="header">
+		<div class="left">
+			<h1>dorm<%= link_to image_tag("logoimage.png"), root_path %><span class="logo">MATCH</span></h1>
+		</div>
+		<div class="right">
+		<% if student_signed_in? %>	
+			<%= link_to 'Logout', destroy_student_session_path, :method => :delete %>
+		<% else %>
+			<%= link_to 'Login', root_path %>
+		<% end %>
+		</div>
+	</div>
+	<div id="container">
+		<%= yield %>
+	</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<h2>Schools Listing</h2>
+
+<p>School</p>
+    <% @schools.each do |school| %>
+    	<p><%= school.name %>
+        <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
+<%= render 'form' %>

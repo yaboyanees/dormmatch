@@ -1,0 +1,76 @@
+<title>DormMatch | Homepage</title>
+<% if student_signed_in? %>
+	<% if current_student.gender == 1 %>
+	<div id="guys"> 			
+		<% @males.each do |male| %>
+			<% if male.id == current_student.id %>
+				<table id="selfieg">
+					<tr><th>You!</th></tr>
+					<tr><td><%= image_tag male.image%></td></tr>
+					<tr><td><%= male.score_calc %></td></tr>
+				</table>
+			<% else %>
+			<% end %>
+		<% end %>
+		<% @males.each do |male| %>
+			<% if male.id != current_student.id %>
+				<table id="guy">
+					<tr><th><%= male.f_name.humanize %></th></tr>
+					<tr><td><%= image_tag male.image%></td></tr>
+					<tr><td><%= male.score_calc %></td></tr>
+				</table>
+			<% else %>
+			<% end %>
+		<% end %>
+	</div>
+	<% else %>
+	<div id="girls"> 			
+		<% @females.each do |female| %>
+			<% if female.id == current_student.id %>
+				<table id="selfief">
+					<tr><th>You!</th></tr>
+					<tr><td><%= image_tag female.image%></td></tr>
+					<tr><td><%= female.score_calc %></td></tr>
+				</table>
+			<% else %>
+			<% end %>
+		<% end %>
+		<% @females.each do |female| %>
+				<table id="girl">
+					<% if female.id != current_student.id %>
+					<tr><th><%= female.f_name.humanize %></th></tr>
+					<tr><td><%= image_tag female.image%></td></tr>
+					<tr><td><%= female.score_calc %></td></tr>
+					<% else %>
+					<% end %>
+				</table>	
+		<% end %>
+	</div>
+	<% end %>
+<% else %>
+<div id="imagebg">
+	<section class="signin">
+		<%= form_for(:student, :url => session_path(:student)) do |f| %>
+		<h1>Login</h1>
+			<%= f.label :email %>
+			<%= f.email_field :email, autofocus: true %>
+			<%= f.label :password %>
+			<%= f.password_field :password, autocomplete: "off" %><br />
+			<%= f.submit "Login", :class =>"lbtn"  %><%= image_tag("sign_in.png") %>
+		<% end %>
+	</section>
+	<section class="register">
+		<%= form_for(:student, :url => registration_path(:student)) do |f| %>
+		<h1>Join</h1>
+			<%= f.label :email %>
+			<%= f.email_field :email, autofocus: true %>
+			<%= f.label :password %>
+			<%= f.password_field :password, autocomplete: "off" %>
+			<%= f.label :password_comfirmation %>
+			<%= f.password_field :password_confirmation, autocomplete: "off" %><br />
+			<%= f.hidden_field :score %>
+			<%= f.submit "Join", :class =>"sbtn" %><%= image_tag("sign_up.png") %>
+		<% end %>
+	</section>
+</div>	
+<% end %>

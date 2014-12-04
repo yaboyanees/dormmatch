@@ -1,0 +1,53 @@
+// Place all the styles related to the sturollup controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#guys{
+	background-color: #7bb8ff;
+	width: 100%;
+	height: 1000px;
+}
+#girls{
+	background-color: pink;
+	width: 100%;
+	height: 1000px;
+}
+#selfieg, #selfief {
+	float: left;
+	padding: 80px 20px 80px 20px;
+}
+#selfief {
+	background-color: #ff8caa;
+	border: 1px solid #FF779B;
+}
+#selfieg {
+	background-color: #439aff;
+	border: 1px solid #278bff;
+}
+#selfieg td, #selfief td, #girl td, #guy td{
+	text-align: center;
+}
+#girl{
+	float: right;
+	border: 1px solid #ff8caa;
+}
+#guy{
+	float: right;
+	border: 1px solid #278bff;
+}
+
+.students{
+}
+.students h2{
+	text-align:center;
+	font-size:30px;
+	font-family:arial;
+	margin: 0;
+	padding: 0;
+}
+.students img{
+	padding: 10px;
+}
+table {
+	width: 20%;
+}

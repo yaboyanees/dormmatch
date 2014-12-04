@@ -1,0 +1,39 @@
+<h1>Listing dorms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dorms.each do |dorm| %>
+    <% if dorm.school_id == current_student.school_id %>
+      <tr>
+        <td><%= image_tag dorm.dorm_image %></td>
+        <td><%= image_tag dorm.room_image %></td>
+        <td><%= dorm.name %></td>
+        <td><%= number_to_currency(dorm.price) %></td>
+        <td><%= dorm.location %></td>
+        <td><%= dorm.num_roomates %></td>
+        <td><%= link_to 'Edit', edit_dorm_path(dorm) %></td>
+        <td><%= link_to 'Destroy', dorm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% else %>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= render 'form' %>

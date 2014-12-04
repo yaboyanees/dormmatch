@@ -1,0 +1,21 @@
+<div id="student">
+	<div class="students">
+		<h2>@<%= current_student.schoolname %></h2>
+			<% @students.each do |student| %>
+				<% if student.school_id == current_student.school_id %>
+				<table>
+					<tr>
+						<td><%= image_tag student.image%></td>
+					<% if student.id == current_student.id %>
+						<td>You!</td>
+					<% else %>
+						<td><%= student.f_name.humanize %></td>
+					<% end %>
+					<td><%= student.student_score %></td>
+				<% else %>
+				<% end %>
+					</tr>
+				</table>
+			<% end %> 
+	</div>
+</div>

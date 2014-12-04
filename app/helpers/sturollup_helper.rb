@@ -1,0 +1,2 @@
+module SturollupHelper
+end

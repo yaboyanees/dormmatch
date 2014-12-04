@@ -1,0 +1,85 @@
+// Place all the styles related to the after_signup controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#backdrop {
+	background-color: #bda4fd;
+	width: 100%;
+	height: 1000px;
+}
+.onestep {
+	padding: 5% 5% 0 36%;
+}
+.onestep h2 {
+	font-family: arial;
+	font-size: 40px;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+.onestep label, .onestep input {
+	margin-left: 55px;
+}
+.onestep label {
+	font-family: arial;
+	font-size: 30px;
+	color: white;
+}
+.onestep input {
+    height: 48px;
+    width: 246px;
+    display:block;
+    font-size:25px;
+} 
+.onestep select {
+	margin-left:48px;
+	font-size: 25px;
+	padding:20px 106px 20px 5px;
+}
+.onestep input.nextButton {
+    height: 48px;
+    width: 260px;
+    border-radius: 4px;
+    display:block;
+    font-size:18px;
+    color: white;
+    cursor: pointer;
+}
+.onestep input.nextButton{
+    background-color:#00d400;
+    
+}
+
+#twostep{
+	overflow: scroll; 
+	width: 100%;
+	background-color: #ffdd72;
+	padding-bottom: 50px;
+}
+#twostep h2{
+	margin: 0;
+	padding: 10px 0 0 10px;
+	font-family: arial;
+	font-size: 40px;
+	color: #494948;
+}
+.toprow, .secondrow, .thirdrow, .fourthrow, .fifthrow, .sixthrow {
+	width: 1520px;
+}
+.secondrow, .fourthrow, .sixthrow{
+	background-color: #f6f6f6;
+}
+
+.trans:active {
+	border: 1px solid black;
+}
+.finiButton {
+    height: 58px;
+    width: 260px;
+    display:block;
+    font-size:24px;
+    color: white;
+    cursor: pointer;
+    background-color:#db4437; 
+    margin-left: auto;
+    margin-right: auto;
+}
