@@ -1,15 +1,99 @@
 <%= form_for(@student, :url => wizard_path, :method => :put) do |f| %>
-<div id="backdrop">
-	<div class="onestep">
-		<h2>Please Add 411 Info</h2>
-		<%= f.label "Name" %><br>
-		<%= f.text_field :f_name, :placeholder => "Roomie" %><br>
-		<%= f.label "Image" %><br>
-		<%= f.text_field :image, :placeholder => "userimage.png" %><br>
-		<%= f.label "School" %><br />
-		<%= f.collection_select :school_id, School.all, :id, :schoolname, :prompt => '' %><br />
-		<br />
-		<%= f.submit 'Next', :class =>"nextButton" %>
+<div id="twostep">
+	<div class="toprow">
+	<h2>Gender?</h2>
+	 <img src="/assets/male.jpg" onclick="document.getElementById('26').checked = true" class="trans">
+	 <input type="radio" id="26" value="1" name="student[gender]" style="display:none;" /> 
+	 
+	 <img src="/assets/female.jpeg" onclick="document.getElementById('27').checked = true" class="trans">
+	 <input type="radio" id="27" value="2" name="student[gender]" style="display:none;"/> 
 	</div>
-</div>
+	
+	<div class="secondrow">
+	<h2>Typical Saturday?</h2>
+	 <img src="/assets/fball.jpg" onclick="document.getElementById('6').checked = true" class="trans">
+	 <input type="radio" id="6" value="5" name="student[saturday]" style="display:none;" /> 
+	 
+	 <img src="/assets/study.jpg" onclick="document.getElementById('7').checked = true" class="trans">
+	 <input type="radio" id="7" value="0" name="student[saturday]" style="display:none;"/> 
+	 
+	 <img src="/assets/vgames.jpg" onclick="document.getElementById('8').checked = true" class="trans">
+	 <input type="radio" id="8" value="2" name="student[saturday]" style="display:none;"/> 
+
+	 <img src="/assets/drink.jpg" onclick="document.getElementById('9').checked = true" class="trans">
+	 <input type="radio" id="9" value="7" name="student[saturday]" style="display:none;"/> 
+
+	 <img src="/assets/club.jpg" onclick="document.getElementById('10').checked = true" class="trans">
+	 <input type="radio" id="10" value="10" name="student[saturday]" style="display:none;"/> 
+	</div>
+	
+	<div class="thirdrow">
+	<h2>Hobbies?</h2>
+	 <img src="/assets/tv.jpg" onclick="document.getElementById('11').checked = true" class="trans">
+	 <input type="radio" id="11" value="3" name="student[hobby]" style="display:none;" /> 
+	 
+	 <img src="/assets/fit.jpg" onclick="document.getElementById('12').checked = true" class="trans">
+	 <input type="radio" id="12" value="5" name="student[hobby]" style="display:none;"/> 
+	 
+	 <img src="/assets/reading.jpg" onclick="document.getElementById('13').checked = true" class="trans">
+	 <input type="radio" id="13" value="0" name="student[hobby]" style="display:none;"/> 
+
+	 <img src="/assets/food.jpg" onclick="document.getElementById('14').checked = true" class="trans">
+	 <input type="radio" id="14" value="2" name="student[hobby]" style="display:none;"/> 
+
+	 <img src="/assets/run.jpg" onclick="document.getElementById('15').checked = true" class="trans">
+	 <input type="radio" id="15" value="4" name="student[hobby]" style="display:none;"/> 
+	</div>
+	
+	<div class="fourthrow">
+	<h2>Major Interest?</h2>
+	 <img src="/assets/math.jpg" onclick="document.getElementById('16').checked = true" class="trans">
+	 <input type="radio" id="16" value="0" name="student[major]" style="display:none;" /> 
+	 
+	 <img src="/assets/science.jpg" onclick="document.getElementById('17').checked = true" class="trans">
+	 <input type="radio" id="17" value="0" name="student[major]" style="display:none;"/> 
+	 
+	 <img src="/assets/engineering.jpg" onclick="document.getElementById('18').checked = true" class="trans">
+	 <input type="radio" id="18" value="0" name="student[major]" style="display:none;"/> 
+
+	 <img src="/assets/philo.jpg" onclick="document.getElementById('19').checked = true" class="trans">
+	 <input type="radio" id="19" value="4" name="student[major]" style="display:none;"/> 
+
+	 <img src="/assets/undecided.jpg" onclick="document.getElementById('20').checked = true" class="trans">
+	 <input type="radio" id="20" value="10" name="student[major]" style="display:none;"/> 
+	</div>
+
+	<div class="fifthrow">
+	<h2>Sleeping Preference?</h2>
+	 <img src="/assets/early.jpg" onclick="document.getElementById('21').checked = true" class="trans">
+	 <input type="radio" id="21" value="1" name="student[sleep]" style="display:none;" /> 
+	 
+	 <img src="/assets/late.jpg" onclick="document.getElementById('22').checked = true" class="trans">
+	 <input type="radio" id="22" value="5" name="student[sleep]" style="display:none;"/> 
+	 
+	 <img src="/assets/bum.jpg" onclick="document.getElementById('23').checked = true" class="trans">
+	 <input type="radio" id="23" value="10" name="student[sleep]" style="display:none;"/> 
+	</div>
+	
+	<div class="sixthrow">
+	<h2>Music You Enjoy?</h2>
+	 <img src="/assets/rap.jpg" onclick="document.getElementById('1').checked = true" class="trans">
+	 <input type="radio" id="1" value="10" name="student[music]" style="display:none;" /> 
+	 
+	 <img src="/assets/country.jpg" onclick="document.getElementById('2').checked = true" class="trans">
+	 <input type="radio" id="2" value="5" name="student[music]" style="display:none;"/> 
+	 
+	 <img src="/assets/pop.jpg" onclick="document.getElementById('3').checked = true" class="trans">
+	 <input type="radio" id="3" value="3" name="student[music]" style="display:none;"/> 
+
+	 <img src="/assets/rock.jpg" onclick="document.getElementById('4').checked = true" class="trans">
+	 <input type="radio" id="4" value="1" name="student[music]" style="display:none;"/> 
+
+	 <img src="/assets/edm.jpg" onclick="document.getElementById('5').checked = true" class="trans">
+	 <input type="radio" id="5" value="10" name="student[music]" style="display:none;"/> 
+	</div>
+<br />
+	<%= f.submit 'Next', :class =>"nextButton" %>
 <% end %>
+</div>
+

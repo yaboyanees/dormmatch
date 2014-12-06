@@ -6,8 +6,8 @@
 			<% if male.id == current_student.id %>
 				<table id="selfieg">
 					<tr><th>You!</th></tr>
-					<tr><td><%= image_tag male.image%></td></tr>
-					<tr><td><%= male.score_calc %></td></tr>
+					<tr><td><%= image_tag male.image %></td></tr>
+					<tr><th><%= male.f_name.humanize %></th></tr>
 				</table>
 			<% else %>
 			<% end %>
@@ -17,7 +17,11 @@
 				<table id="guy">
 					<tr><th><%= male.f_name.humanize %></th></tr>
 					<tr><td><%= image_tag male.image%></td></tr>
-					<tr><td><%= male.score_calc %></td></tr>
+					<% if current_student.score > male.score %>
+						<tr><th><%= (((male.score)/(current_student.score).to_f)*100).to_i %>%</th></tr>
+					<% else %>
+						<tr><th><%= (((current_student.score)/(male.score).to_f)*100).to_i %>%</th></tr>
+					<% end %>
 				</table>
 			<% else %>
 			<% end %>
@@ -30,20 +34,24 @@
 				<table id="selfief">
 					<tr><th>You!</th></tr>
 					<tr><td><%= image_tag female.image%></td></tr>
-					<tr><td><%= female.score_calc %></td></tr>
+					<tr><th><%= female.f_name.humanize %></th></tr>
 				</table>
 			<% else %>
 			<% end %>
 		<% end %>
 		<% @females.each do |female| %>
+			<% if female.id != current_student.id %>
 				<table id="girl">
-					<% if female.id != current_student.id %>
 					<tr><th><%= female.f_name.humanize %></th></tr>
 					<tr><td><%= image_tag female.image%></td></tr>
-					<tr><td><%= female.score_calc %></td></tr>
+					<% if current_student.score > female.score %>
+						<tr><th><%= (((female.score)/(current_student.score).to_f)*100).to_i %>%</th></tr>
 					<% else %>
+						<tr><th><%= (((current_student.score)/(female.score).to_f)*100).to_i %>%</th></tr>
 					<% end %>
-				</table>	
+				</table>
+			<% else %>
+			<% end %>
 		<% end %>
 	</div>
 	<% end %>

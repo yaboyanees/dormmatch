@@ -27,7 +27,6 @@ belongs_to :room
 # 		end
 # 	end
 
-
 	def score_calc
 		if self.saturday.blank?
 			score = 0
